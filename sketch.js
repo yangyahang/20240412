@@ -5,9 +5,9 @@ let color2 = ["#E06A4E", "#DEB853", "#789F8A", "#5A3D2B"];
 
 class cr_class{
   constructor(args){
-    this.p=args.p || {x:0,y:0}
-    this.d=args.d || 50
-    this.v=args.v || {x:random(1,2),y:random(1,2)}
+    this.p=args.p || {x:random(width),y:random(height)}
+    this.d=args.d || random(50,100)
+    this.v=args.v || {x:random(-2,2),y:random(-2,2)}
     this.a=args.a || {x:0,y:random(0.7,1.2)}
     this.c1=args.c1 || random(color1)
     this.c2=args.c2 || random(color2)
@@ -16,7 +16,7 @@ class cr_class{
     push();
     translate(this.p.x , this.p.y );
     noStroke();
-    fill(this.c1);
+    fill(this.c2);
     rectMode(CENTER);
     rect(0, 0, this.d, this.d, this.d / 2, this.d / 2, 0, 0);
     fill(0);
@@ -70,7 +70,7 @@ function setup() {
   score=0
   fill(0)
   textSize(50)
-  text("score"+score,150,150)
+  text("捕捉"+score,150,150)
 }
 
 
@@ -93,7 +93,7 @@ function draw() {
   }
   fill(0)
   textSize(50)
-  text("score"+score,150,150)
+  text("捕捉"+score,150,150)
 }
 
 function mousePressed(){
@@ -106,5 +106,5 @@ function mousePressed(){
   }
   fill(0)
   textSize(50)
-  text("score"+score,150,150)
+  text("捕捉"+score,150,150)
 }
